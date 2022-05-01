@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .cards{
+        perspective: 500px;
+    }
+    .card{
+        width: 200px;
+        height: 250px;
+        background: url('https://i.pinimg.com/564x/e1/01/a9/e101a95f2fab27e6a6b6e78a758018b9.jpg')
+        center no-repeat;
+        background-size: cover;
+      
+      
+        border-radius: 4px;
+        position: relative;
+        transform-style:preserve-3d ;
+        will-change: transform;
+        transition: transform .5s;
+        border-radius: 45px;
+    }
+    .card:hover{
+        transform: translateZ(10px);
+        
+    }
+    .card-title{
+        
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateZ(-50%);
+        transition: transform .5s;
+    }
+    .card:horver .card-title{
+        transform: translateZ(50px);
+    }
+    body{
+        background-color: rgb(31, 31, 31);
+    }
+    
+</style>
+
+<style>
+   /* .icon{
+        text-decoration: none;
+        width: 50px;
+        height: 50px;
+        background-color: chocolate;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 
+        5px 5px 10px #ad5216,
+        -5px -5px 10px #e9701e;
+    }
+    .icon-focus {
+        animation: shadow .15s
+        ease-in-out;
+    }
+    @keyframes shadow {
+        0% {
+            box-shadow: 
+            inset 5px 5px 10px #ad5216,
+            inset 5px -5px 10px #e9701e;
+        }
+        100% {
+            box-shadow: none;
+        }
+    }
+
+
+
+    */
+</style>
+
+<style>
+    /*
+    Auther: Abdelrhman Said
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  place-items: center;
+  background: linear-gradient(315deg, #ffffff, #d7e1ec);
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #ffffff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #333333;
+  color: #ffffff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #CD201F;
+  color: #ffffff;
+}
+</style>
+<body>
+    <section class="cards">
+        <figure class="card">
+            <figcaption class="card-title"></figcaption>
+        </figure>
+    </section>
+ <div>
+     
+    <a href="#" class="icon"><i class="ri-instagram-line"></i></a>
+    <a href="#" class="icon"><i class="ri-twitter-line"></i></a>
+    <a href="#" class="icon"><i class="ri-github-line"></i></a>
+ </div>
+    
+
+
+ <div>  
+    <ul class="wrapper">
+        <a href="https://twitter.com/steenzyser">
+        <li class="icon twitter">
+          <span class="tooltip">Twitter</span>
+          <span><i class="fab fa-twitter"></i></span>
+        </li>
+      </a>
+      <a href="https://www.instagram.com/steenzyser/">
+        <li class="icon instagram">
+          <span class="tooltip">Instagram</span>
+          <span><i class="fab fa-instagram"></i></span>
+        </li>
+      </a>
+      <a href="https://github.com/steenzyser">
+        <li class="icon github">
+          <span class="tooltip">Github</span>
+          
+          <span><i class="fab fa-github"></i></span>
+        </li>
+      </a>
+      <a href="https://www.youtube.com/channel/UCLsXXltoN4DRX-BYon035zw">
+        <li class="icon youtube">
+          <span class="tooltip">Youtube</span>
+          <span><i class="fab fa-youtube"></i></span>
+        </li>
+      </a>
+      </ul>
+ </div>
+</body>
+</html>
