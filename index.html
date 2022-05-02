@@ -1,168 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>CSS Multiple Text Typing animation</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .cards{
+        perspective: 500px;
+    }
+    .card{
+        width: 200px;
+        height: 250px;
+        background: url('https://i.pinimg.com/564x/e1/01/a9/e101a95f2fab27e6a6b6e78a758018b9.jpg')
+        center no-repeat;
+        background-size: cover;
+      
+      
+        border-radius: 6px;
+        position: relative;
+        transform-style:preserve-3d ;
+        will-change: transform;
+        transition: transform .6s;
+        border-radius: 50px;
+    }
+    .card:hover{
+        transform: translateZ(25px);
+        
+    }
+    .card-title{
+        
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateZ(-50%);
+        transition: transform .5s;
+    }
+    .card:horver .card-title{
+        transform: translateZ(50px);
+    }
+    body{
+        background-color: rgb(31, 31, 31);
+    }
+    
+</style>
 
-    <audio autoplay>
-      <source src="audio.webm" type="audio/webm">
-    </audio>
-  
-<iframe width="0" height="0" src="https://www.youtuberepeater.com/watch?v=uViWJOTKzpU#gsc.tab=0" frameborder="0" allowfullscreen></iframe>
-  </head>
-  <style>
-      *,
-*::after,
-*::before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-:root {
-  --yangColor: #ff6565;
-  --yinColor: #111111;
-}
-
-body {
-  font-family: 'Roboto Mono', monospace;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--yangColor);
-  background-color: var(--yinColor);
-  width: 100%;
-  height: 100vh;
-  overflow: hidden auto;
-}
-
-.text-wrapper {
-  display: flex;
-  font-size: 60px;
-  font-weight: 400;
-}
-
-.text-static {
-  color: #ffffff;
-}
-
-.text-dynamic {
-  margin-left: 30px;
-  line-height: 90px;
-  height: 90px;
-  overflow: hidden;
-}
-
-.text-item {
-  position: relative;
-  font-weight: 500;
-  color: var(--yangColor);
-  list-style: none;
-  top: 0;
-  animation: slide 12s steps(4) infinite;
-}
-
-.text-item::after {
-  position: absolute;
-  content: '';
-  left: 0;
-  height: 100%;
-  width: calc(100% + 30px);
-  border-left: 3px solid var(--yangColor);
-  background-color: var(--yinColor);
-  animation: typing 3s steps(10) infinite;
-}
-
-@keyframes typing {
-  40%,
-  60% {
-    left: 100%;
-  }
-  100% {
-    left: 0;
-  }
-}
-
-@keyframes slide {
-  100% {
-    top: -360px;
-  }
-}
-  </style>
-
-  <style>
-      body{
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
+<style>
+   /* .icon{
+        text-decoration: none;
+        width: 50px;
+        height: 50px;
+        background-color: chocolate;
+        color: #fff;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #0b1522;
+        box-shadow: 
+        5px 5px 10px #ad5216,
+        -5px -5px 10px #e9701e;
     }
-    .heart {
-        height: 70px;
-        width: 70px;
-        background: #f20044;
-        position: relative;
-        transform: rotate(-45deg);
-        box-shadow: -10px 10px 90px #f20044;
-        animation: heart 0.6s linear infinite;
+    .icon-focus {
+        animation: shadow .15s
+        ease-in-out;
     }
-    @keyframes heart{
-        0%{
-             transform: rotate(-45deg) scale(1.07);
+    @keyframes shadow {
+        0% {
+            box-shadow: 
+            inset 5px 5px 10px #ad5216,
+            inset 5px -5px 10px #e9701e;
         }
-        80%{
-             transform: rotate(-45deg) scale(1.0);
-        }
-        100%{
-             transform: rotate(-45deg) scale(0.8);
+        100% {
+            box-shadow: none;
         }
     }
-    .heart::before{
-        content: '';
-        position: absolute;
-        height: 70px;
-        width: 70px;
-        background: #f20044;
-        top: -50%;
-        border-radius: 50px;
-        box-shadow: -10px -10px 90px #f20044;
-    }
-    .heart::after{
-        content: '';
-        position: absolute;
-        height: 70px;
-        width: 70px;
-        background: #f20044;
-        right: -50%;
-        border-radius: 50px;
-        box-shadow: 10px 10px 90px #f20044;
-    }
-  </style>
-  <body>
+    */
+</style>
 
-    <div class="heart"></div>
+<style>
+    /*
+    Auther: Abdelrhman Said
+*/
 
-    <div class="text-wrapper">
-      <div class="text-static">&nbsp;Meyra,</div>
-      <ul class="text-dynamic">
-        <li class="text-item"><span>İyi ki Doğdun</span></li>
-        <li class="text-item"><span>Mutlu Yıllar</span></li>
-        <li class="text-item"><span>Seni tanıdığım için çok mutluyum</span></li>
-        <li class="text-item"><span>Her zaman mutlu ol :)</span></li>
-        
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  place-items: center;
+  background: linear-gradient(315deg, #ffffff, #d7e1ec);
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #ffffff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #333333;
+  color: #ffffff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #CD201F;
+  color: #ffffff;
+}
+</style>
+<body>
+    <section class="cards">
+        <figure class="card">
+            <figcaption class="card-title"></figcaption>
+        </figure>
+    </section>
+ <div>
+     
+    <a href="#" class="icon"><i class="ri-instagram-line"></i></a>
+    <a href="#" class="icon"><i class="ri-twitter-line"></i></a>
+    <a href="#" class="icon"><i class="ri-github-line"></i></a>
+ </div>
+    
+
+
+ <div>  
+    <ul class="wrapper">
+        <a href="https://twitter.com/steenzyser">
+        <li class="icon twitter">
+          <span class="tooltip">Twitter</span>
+          <span><i class="fab fa-twitter"></i></span>
+        </li>
+      </a>
+      <a href="https://www.instagram.com/steenzyser/">
+        <li class="icon instagram">
+          <span class="tooltip">Instagram</span>
+          <span><i class="fab fa-instagram"></i></span>
+        </li>
+      </a>
+      <a href="https://github.com/steenzyser">
+        <li class="icon github">
+          <span class="tooltip">Github</span>
+          
+          <span><i class="fab fa-github"></i></span>
+        </li>
+      </a>
+      <a href="https://www.youtube.com/channel/UCLsXXltoN4DRX-BYon035zw">
+        <li class="icon youtube">
+          <span class="tooltip">Youtube</span>
+          <span><i class="fab fa-youtube"></i></span>
+        </li>
+      </a>
       </ul>
-    </div>
-  </body>
+ </div>
+</body>
 </html>
